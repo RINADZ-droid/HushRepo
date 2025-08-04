@@ -24,6 +24,8 @@ func updateUI():
 	$CanvasLayer/BackButton.text = tr("BACK")
 	$CanvasLayer/MainMenuButton.text = tr("MAIN MENU ")
 	$CanvasLayer/OptionsPanelElements/LanguageLabel.text = tr("LANGUAGE")
+	$CanvasLayer/OptionsPanelElements/LangOptionButton.set_item_text(1,tr("ARABIC"))
+	$CanvasLayer/OptionsPanelElements/LangOptionButton.set_item_text(0,tr("ENGLISH"))
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:

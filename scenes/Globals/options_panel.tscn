@@ -160,6 +160,7 @@ offset_right = 187.0
 offset_bottom = 214.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 5
 
 [node name="MusicLabel" type="Label" parent="CanvasLayer/OptionsPanelElements"]
 layout_mode = 2

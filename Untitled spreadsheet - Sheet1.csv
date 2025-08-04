@@ -1,5 +1,5 @@
 ,en ,Ar
-ENGLISH,English,الأنكليزية
+ENGLISH,English,الانجليزية
 ARABIC,Arabic,العربية 
 START,Start ,ابدأ
 OPTIONS,Options,الخيارات 
@@ -11,3 +11,5 @@ RESOLUTION ,Resolution,الدقة
 SHOW FPS,Show Fps,عرض الفريمات 
 BACK,Back ,رجوع 
 MAIN MENU ,Main Menu,القائمة الرئيسية
+VSYNC MODE,Vsync Mode,وضع Vsync
+LANGUAGE,Language,اللغة

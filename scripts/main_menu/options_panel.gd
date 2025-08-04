@@ -26,6 +26,7 @@ func updateUI():
 	$CanvasLayer/OptionsPanelElements/LanguageLabel.text = tr("LANGUAGE")
 	$CanvasLayer/OptionsPanelElements/LangOptionButton.set_item_text(1,tr("ARABIC"))
 	$CanvasLayer/OptionsPanelElements/LangOptionButton.set_item_text(0,tr("ENGLISH"))
+	$CanvasLayer/OptionsPanelElements/VsyncModeLabel.text = tr("VSYNC MODE")
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:

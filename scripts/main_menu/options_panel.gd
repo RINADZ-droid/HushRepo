@@ -44,7 +44,6 @@ func _process(delta: float) -> void:
 	elif GameManager.lang == "Ar":
 		tr_ar()
 
-
 func _on_lang_option_button_item_selected(index: int) -> void:
 	match index:
 		0:

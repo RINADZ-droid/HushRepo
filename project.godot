@@ -45,6 +45,10 @@ Reload={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://Untitled spreadsheet - Sheet1.Ar.translation", "res://Untitled spreadsheet - Sheet1.en .translation")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

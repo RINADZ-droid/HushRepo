@@ -4,6 +4,7 @@ var show_options_panel:bool
 var show_fps:bool
 var resolution:int
 var can_edit_resolution:bool
+var lang:String
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS

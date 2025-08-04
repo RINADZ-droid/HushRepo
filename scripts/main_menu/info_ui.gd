@@ -1,11 +1,12 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	pass # Replace with function body.
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if GameManager.show_fps:
-		$Label.text ="FPS: " + str(Engine.get_frames_per_second())
+		$Label.visible = true
+		$Label.text ="FPS: " + str(snapped(Engine.get_frames_per_second(),1))
 	else :
-		$Label.text = ""
+		$Label.visible = false

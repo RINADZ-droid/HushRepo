@@ -1,0 +1,223 @@
+[gd_scene load_steps=10 format=3 uid="uid://cksuy4qgkjcad"]
+
+[ext_resource type="Script" uid="uid://dajutvj2fechj" path="res://scripts/main_menu/options_panel.gd" id="1_bjbrc"]
+[ext_resource type="Script" uid="uid://d1t416shi3his" path="res://scripts/main_menu/options_panel_button_control.gd" id="2_yx3eo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_chqbf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46teh"]
+bg_color = Color(0, 0, 0, 0.45098)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_bottom_right = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjd1i"]
+bg_color = Color(0.252028, 0.252028, 0.252028, 0.45098)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_bottom_right = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pefgo"]
+bg_color = Color(0.497474, 0.497474, 0.497474, 0.45098)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_bottom_right = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_373ev"]
+bg_color = Color(0, 0, 0, 0.45098)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_bottom_right = 25
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_chqbf"]
+color = Color(0.25, 0.25, 0.25, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_46teh"]
+color = Color(1, 1, 1, 1)
+thickness = 5
+
+[node name="OptionsPanel" type="Panel"]
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -298.0
+offset_right = 217.5
+offset_bottom = 298.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bjbrc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -273.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsPanelButtonControl" type="Node" parent="."]
+script = ExtResource("2_yx3eo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 443.0
+offset_top = -136.0
+offset_right = 616.0
+offset_bottom = -82.0
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxEmpty_chqbf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_46teh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fjd1i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pefgo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_373ev")
+text = "Back
+"
+
+[node name="MainMenuButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -616.0
+offset_top = -136.0
+offset_right = -443.0
+offset_bottom = -82.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxEmpty_chqbf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_46teh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fjd1i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pefgo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_373ev")
+text = "Main Menu
+"
+
+[node name="OptionsPanelElements" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.5
+offset_top = -181.5
+offset_right = 185.5
+offset_bottom = 181.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="MusicLabel" type="Label" parent="CanvasLayer/OptionsPanelElements"]
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/OptionsPanelElements"]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_chqbf")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_46teh")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_46teh")
+max_value = 1.0
+step = 0.05
+
+[node name="SFXLabel" type="Label" parent="CanvasLayer/OptionsPanelElements"]
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSSlider" type="HSlider" parent="CanvasLayer/OptionsPanelElements"]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_chqbf")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_46teh")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_46teh")
+max_value = 1.0
+step = 0.05
+
+[node name="WindowModeLabel" type="Label" parent="CanvasLayer/OptionsPanelElements"]
+layout_mode = 2
+text = "Window Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WindowModeOptionButton" type="OptionButton" parent="CanvasLayer/OptionsPanelElements"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Exclusive Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed"
+popup/item_2/id = 2
+popup/item_3/text = "Maximized"
+popup/item_3/id = 3
+
+[node name="VsyncModeLabel" type="Label" parent="CanvasLayer/OptionsPanelElements"]
+layout_mode = 2
+text = "Vsync Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VsyncModeOptionButton" type="OptionButton" parent="CanvasLayer/OptionsPanelElements"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+popup/item_2/text = "Adaptive"
+popup/item_2/id = 2
+popup/item_3/text = "Mailbox"
+popup/item_3/id = 3
+
+[node name="ResolutionLabel" type="Label" parent="CanvasLayer/OptionsPanelElements"]
+layout_mode = 2
+text = "Resolution"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResolutionSlider" type="HSlider" parent="CanvasLayer/OptionsPanelElements"]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_chqbf")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_46teh")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_46teh")
+max_value = 1.0
+step = 0.05
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/OptionsPanelElements"]
+layout_mode = 2
+text = "Show FPS"
+
+[connection signal="pressed" from="CanvasLayer/BackButton" to="OptionsPanelButtonControl" method="_on_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButton" to="OptionsPanelButtonControl" method="_on_main_menu_button_pressed"]

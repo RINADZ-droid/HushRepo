@@ -1,4 +1,32 @@
-[gd_scene format=3 uid="uid://bhvmy1k5uxxgx"]
+[gd_scene load_steps=7 format=3 uid="uid://bhvmy1k5uxxgx"]
+
+[ext_resource type="Script" uid="uid://b1rrspjxv188i" path="res://scripts/main_menu/main_menu_buttons_control.gd" id="1_xqga4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vn8vg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqga4"]
+bg_color = Color(0, 0, 0, 0.45098)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_bottom_right = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovrgc"]
+bg_color = Color(0.252028, 0.252028, 0.252028, 0.45098)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_bottom_right = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2o76q"]
+bg_color = Color(0.497474, 0.497474, 0.497474, 0.45098)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_bottom_right = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bivr"]
+bg_color = Color(0, 0, 0, 0.45098)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_bottom_right = 25
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +35,70 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MainMenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = -28.0
+offset_right = -249.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="MainMenuButtonsControl" type="Node" parent="MainMenuButtons"]
+script = ExtResource("1_xqga4")
+
+[node name="StartButton" type="Button" parent="MainMenuButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vn8vg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_xqga4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ovrgc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2o76q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6bivr")
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="MainMenuButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vn8vg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_xqga4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ovrgc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2o76q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6bivr")
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="MainMenuButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vn8vg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_xqga4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ovrgc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2o76q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6bivr")
+text = "Exit"
+
+[connection signal="pressed" from="MainMenuButtons/StartButton" to="MainMenuButtons/MainMenuButtonsControl" method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenuButtons/OptionsButton" to="MainMenuButtons/MainMenuButtonsControl" method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainMenuButtons/ExitButton" to="MainMenuButtons/MainMenuButtonsControl" method="_on_exit_button_pressed"]

@@ -1,5 +1,11 @@
 extends Node
 
+@warning_ignore("unused_parameter")
+func _process(delta: float) -> void:
+	if GameManager.show_options_panel:
+		$"..".visible = false
+	else :
+		$"..".visible = true
 
 func _on_start_button_pressed() -> void:
 	pass # Replace with function body.

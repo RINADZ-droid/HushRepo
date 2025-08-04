@@ -1,6 +1,7 @@
 extends Node
 
 var show_options_panel
+var show_fps
 
 @warning_ignore("unused_parameter")
 func _input(event: InputEvent) -> void:

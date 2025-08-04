@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://jd5n0as1pia6"]
+
+[ext_resource type="Script" uid="uid://bs5b3351wihq2" path="res://scripts/main_menu/info_ui.gd" id="1_dqjmy"]
+
+[node name="InfoUi" type="CanvasLayer"]
+script = ExtResource("1_dqjmy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 194.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 25
+vertical_alignment = 1

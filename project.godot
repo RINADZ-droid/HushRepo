@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 GameManager="*res://scripts/Globals/game_manager.gd"
 OptionsPanel="*res://scenes/Globals/options_panel.tscn"
+InfoUi="*res://scenes/Globals/info_ui.tscn"
 
 [display]
 

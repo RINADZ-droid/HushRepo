@@ -14,6 +14,8 @@ func _process(delta: float) -> void:
 		$"../../GameTitle".visible = true
 
 func _on_start_button_pressed() -> void:
+	TransitionScreen.transition()
+	await TransitionScreen._on_transition_finished
 	get_tree().change_scene_to_file("res://test.tscn")
 
 

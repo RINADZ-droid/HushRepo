@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dv72yf34vql4e"]
+
+[ext_resource type="Script" uid="uid://gwy0qweildx" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="AudioStream" uid="uid://c8mk3dgb0cx0p" path="res://assets/Sounds/SFX/walking.mp3" id="2_g2els"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2els"]
+albedo_color = Color(0.0117647, 0.596078, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
+material = SubResource("StandardMaterial3D_g2els")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3vyb7"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_3vyb7")
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_u8vuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_g2els")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.638493, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.490196)
+position = Vector2(640, 360)
+scale = Vector2(5, 5)
+mesh = SubResource("SphereMesh_3vyb7")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_g2els")
+bus = &"SFX"

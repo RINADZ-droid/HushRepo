@@ -13,8 +13,6 @@ func tr_en():
 func updateUI():
 	$Control/Label.text = tr("NOW LOADING")
 	
-
-
 func _ready() -> void:
 	ResourceLoader.load_threaded_request(next_scene_path)
 

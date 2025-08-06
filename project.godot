@@ -76,10 +76,6 @@ flash={
 ]
 }
 
-[internationalization]
-
-locale/translations=PackedStringArray("res://Untitled spreadsheet - Sheet1.Ar.translation", "res://Untitled spreadsheet - Sheet1.en .translation")
-
 [physics]
 
 3d/default_gravity=10.2

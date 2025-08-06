@@ -86,4 +86,5 @@ locale/translations=PackedStringArray("res://Untitled spreadsheet - Sheet1.Ar.tr
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.133196, 0.133196, 0.133196, 1)

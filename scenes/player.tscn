@@ -23,9 +23,15 @@ mesh = SubResource("CapsuleMesh_u8vuu")
 shape = SubResource("CapsuleShape3D_g2els")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.638493, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.638493, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0285006, 4.76837e-07, -0.00934124)
+doppler_tracking = 2
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
+light_energy = 5.0
+spot_angle = 38.9035
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

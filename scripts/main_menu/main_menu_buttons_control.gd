@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 		$"../../GameTitle".visible = true
 
 func _on_start_button_pressed() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	TransitionScreen.transition()
 	await TransitionScreen._on_transition_finished
 	get_tree().change_scene_to_file("res://scenes/main_map.tscn")

@@ -1,12 +1,12 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 4.25
+const JUMP_VELOCITY = 3.5
 const SENSITIVITY = 0.35
 
 
-const BOB_FREQ = 2.5
+const BOB_FREQ = 2.75
 const BOB_AMP = 0.08
 var t_bob = 0.0
 
@@ -16,7 +16,7 @@ var t_bob = 0.0
 
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	GameManager.can_edit_resolution = false
 
 
 func _physics_process(delta: float) -> void:

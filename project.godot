@@ -70,6 +70,10 @@ down={
 
 locale/translations=PackedStringArray("res://Untitled spreadsheet - Sheet1.Ar.translation", "res://Untitled spreadsheet - Sheet1.en .translation")
 
+[physics]
+
+3d/default_gravity=10.2
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.133196, 0.133196, 0.133196, 1)

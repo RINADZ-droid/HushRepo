@@ -35,6 +35,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	
 	if Input.is_action_pressed("sprint"):
+		$"../CanvasLayer/Label2".visible = false
+		$"../CanvasLayer".visible = false
 		SPEED = SPRINT_SPEED
 		BOB_FREQ = SPRINT_BOB_FREQ
 	else :
@@ -76,6 +78,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	else :
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if Input.is_action_just_pressed("flash"):
+		$"../CanvasLayer/Label".visible = false
+		$"../CanvasLayer/Label2".visible = true
 		if flash_on:
 			flash_on = false
 		elif !flash_on:

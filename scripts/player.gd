@@ -1,13 +1,16 @@
 extends CharacterBody3D
 
 
-const SPEED = 3.75
+var SPEED = 3.75
+var SPRINT_SPEED = 5.25
 const JUMP_VELOCITY = 3.5
 const SENSITIVITY = 0.35
 
+var flash_on:bool
 
-const BOB_FREQ = 3.25
-const BOB_AMP = 0.08
+var BOB_FREQ = 3.25
+var SPRINT_BOB_FREQ = 4.0
+const BOB_AMP = 0.075
 var t_bob = 0.0
 
 
@@ -17,6 +20,8 @@ var t_bob = 0.0
 
 func _ready() -> void:
 	GameManager.can_edit_resolution = false
+	$Head/Camera3D/SpotLight3D.visible = false
+
 
 
 func _physics_process(delta: float) -> void:
@@ -28,6 +33,19 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	
+	if Input.is_action_pressed("sprint"):
+		SPEED = SPRINT_SPEED
+		BOB_FREQ = SPRINT_BOB_FREQ
+	else :
+		SPEED = 3.75
+		BOB_FREQ = 3.25
+	
+	if flash_on:
+		$Head/Camera3D/SpotLight3D.visible = true
+	elif !flash_on:
+		$Head/Camera3D/SpotLight3D.visible = false
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -39,13 +57,13 @@ func _physics_process(delta: float) -> void:
 		if !$AudioStreamPlayer3D.playing:
 			$AudioStreamPlayer3D.play()
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = 0.0
+		velocity.z = 0.0
 		$AudioStreamPlayer3D.stop()
 	
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera_3d.transform.origin = _headbob(t_bob)
-
+	
 	move_and_slide()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -57,6 +75,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else :
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if Input.is_action_just_pressed("flash"):
+		if flash_on:
+			flash_on = false
+		elif !flash_on:
+			flash_on = true
 
 @warning_ignore("unused_parameter")
 func _headbob(time):

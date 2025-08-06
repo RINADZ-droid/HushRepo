@@ -58,13 +58,4 @@ func _on_sfxs_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), db)
 
 func _on_resolution_slider_value_changed(value: float) -> void:
-	if value > 0.75:
-		GameManager.resolution = 0
-	else :
-		match value:
-			0.25:
-				GameManager.resolution = 4
-			0.5:
-				GameManager.resolution = 3
-			0.75:
-				GameManager.resolution = 2
+	get_tree().root.scaling_3d_scale = value

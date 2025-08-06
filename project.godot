@@ -52,5 +52,4 @@ locale/translations=PackedStringArray("res://Untitled spreadsheet - Sheet1.Ar.tr
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_clear_color=Color(0.133196, 0.133196, 0.133196, 1)

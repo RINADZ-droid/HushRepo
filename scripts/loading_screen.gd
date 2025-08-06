@@ -2,6 +2,19 @@ extends Control
 
 @export_file("*.tscn") var next_scene_path:String
 
+func tr_ar():
+	TranslationServer.set_locale("Ar")
+	updateUI()
+
+func tr_en():
+	TranslationServer.set_locale("en")
+	updateUI()
+
+func updateUI():
+	$Control/Label.text = tr("NOW LOADING")
+	
+
+
 func _ready() -> void:
 	ResourceLoader.load_threaded_request(next_scene_path)
 
@@ -17,3 +30,8 @@ func _process(delta: float) -> void:
 		TransitionScreen.transition()
 		await TransitionScreen._on_transition_finished
 		get_tree().change_scene_to_packed(new_scene)
+	
+	if GameManager.lang == "en":
+		tr_en()
+	elif GameManager.lang == "Ar":
+		tr_ar()

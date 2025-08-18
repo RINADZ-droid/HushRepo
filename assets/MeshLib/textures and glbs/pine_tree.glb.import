@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://5ap7yudq4ndd"
-path="res://.godot/imported/pine_tree.glb-fa0df7b0346a6d9a7ec07f269ffa508d.scn"
+path="res://.godot/imported/pine_tree.glb-a75a1708e46d4e707e93aec1d76a6567.scn"
 
 [deps]
 
-source_file="res://assets/MeshLib/pine_tree.glb"
-dest_files=["res://.godot/imported/pine_tree.glb-fa0df7b0346a6d9a7ec07f269ffa508d.scn"]
+source_file="res://assets/MeshLib/textures and glbs/pine_tree.glb"
+dest_files=["res://.godot/imported/pine_tree.glb-a75a1708e46d4e707e93aec1d76a6567.scn"]
 
 [params]
 

@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct1lueqi3lxik"
-path.s3tc="res://.godot/imported/pine_tree_pine.png-c2f9055c752778cc51029585913e2760.s3tc.ctex"
-path.etc2="res://.godot/imported/pine_tree_pine.png-c2f9055c752778cc51029585913e2760.etc2.ctex"
+uid="uid://84rsf1h6ffpt"
+path.s3tc="res://.godot/imported/pine_tree_Bark014_1K-JPG_Color.png-5c1e10ec63ea36e8b0c7a2648d064cf0.s3tc.ctex"
+path.etc2="res://.godot/imported/pine_tree_Bark014_1K-JPG_Color.png-5c1e10ec63ea36e8b0c7a2648d064cf0.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d9f8ac3266a2df374fa8fc0e8409a29d"
+"md5": "d306ab4d48a5416c8b02533c10821dbc"
 }
 
 [deps]
 
-source_file="res://assets/MeshLib/pine_tree_pine.png"
-dest_files=["res://.godot/imported/pine_tree_pine.png-c2f9055c752778cc51029585913e2760.s3tc.ctex", "res://.godot/imported/pine_tree_pine.png-c2f9055c752778cc51029585913e2760.etc2.ctex"]
+source_file="res://assets/MeshLib/textures and glbs/pine_tree_Bark014_1K-JPG_Color.png"
+dest_files=["res://.godot/imported/pine_tree_Bark014_1K-JPG_Color.png-5c1e10ec63ea36e8b0c7a2648d064cf0.s3tc.ctex", "res://.godot/imported/pine_tree_Bark014_1K-JPG_Color.png-5c1e10ec63ea36e8b0c7a2648d064cf0.etc2.ctex"]
 
 [params]
 

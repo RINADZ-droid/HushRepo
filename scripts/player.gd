@@ -9,7 +9,7 @@ const SENSITIVITY = 0.35
 var flash_on:bool
 
 var BOB_FREQ = 3.25
-var SPRINT_BOB_FREQ = 4.0
+var SPRINT_BOB_FREQ = 3.5
 const BOB_AMP = 0.075
 var t_bob = 0.0
 

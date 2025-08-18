@@ -1,0 +1,104 @@
+[gd_scene load_steps=12 format=3 uid="uid://ypf2sb14j858"]
+
+[ext_resource type="PackedScene" uid="uid://dv72yf34vql4e" path="res://scenes/player.tscn" id="1_72e8q"]
+[ext_resource type="AudioStream" uid="uid://dtvsihjg14dmv" path="res://assets/Sounds/Lofi Horror.mp3" id="2_d2op2"]
+[ext_resource type="Texture2D" uid="uid://cms0kqa02vsnp" path="res://assets/materials/ground/ground_texture.png" id="3_0rdsr"]
+[ext_resource type="Texture2D" uid="uid://blpvyy1emgtn" path="res://assets/materials/ground/ground_texture_n.png" id="4_ipu61"]
+[ext_resource type="MeshLibrary" uid="uid://bwfsl8cyd238g" path="res://assets/MeshLib/tree.tres" id="5_ipu61"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ipu61"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_ygxny"]
+sky_material = SubResource("ProceduralSkyMaterial_ipu61")
+
+[sub_resource type="Environment" id="Environment_wi4c7"]
+background_mode = 1
+background_color = Color(0.18359, 0.18359, 0.18359, 1)
+sky = SubResource("Sky_ygxny")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.0838264, 0.0952482, 0.113205, 1)
+fog_density = 0.04
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_72e8q"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygxny"]
+albedo_texture = ExtResource("3_0rdsr")
+normal_enabled = true
+normal_scale = 1.25
+normal_texture = ExtResource("4_ipu61")
+uv1_scale = Vector3(100, 100, 100)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0rdsr"]
+points = PackedVector3Array(-50, 0, -50, -50, 0, 50, 50, 0, -50, 50, 0, 50)
+
+[node name="MainGame" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wi4c7")
+
+[node name="Player" parent="." instance=ExtResource("1_72e8q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64404, 1.43394, -0.495376)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_d2op2")
+autoplay = true
+bus = &"Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -204.5
+offset_top = -116.0
+offset_right = 204.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "PRESS [ F ] FOR FLASHLIGHT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -204.5
+offset_top = -116.0
+offset_right = 204.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "PRESS [ SHIFT ] FOR SPRINT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(5.47394, 0, 0, 0, 5.47394, 0, 0, 0, 5.47394, 0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_72e8q")
+surface_material_override/0 = SubResource("StandardMaterial3D_ygxny")
+
+[node name="Collider" type="CollisionShape3D" parent="Ground"]
+visible = false
+shape = SubResource("ConvexPolygonShape3D_0rdsr")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("5_ipu61")
+cell_size = Vector3(2, 11.775, 2)
+data = {
+"cells": PackedInt32Array(65534, 65529, 1441792, 0, 65531, 1441792, 2, 65533, 1441792, 3, 0, 1441792, 2, 3, 1441792, 0, 5, 1441792, 65533, 5, 1441792, 65530, 5, 1441792, 65528, 3, 1441792, 65527, 1, 1441792, 65528, 65534, 1441792, 65529, 65532, 1441792, 65531, 65530, 1441792, 2, 65531, 1441792, 4, 65534, 1441792, 4, 3, 1441792, 3, 5, 1441792, 65534, 7, 1441792, 1, 7, 1441792, 65531, 7, 1441792, 65527, 5, 1441792, 65525, 3, 1441792, 65525, 65535, 1441792, 65526, 65532, 1441792, 65528, 65530, 1441792, 65530, 65528, 1441792, 65534, 65527, 1441792, 1, 65528, 1441792, 4, 65530, 1441792, 6, 65533, 1441792, 7, 0, 1441792, 7, 2, 1441792, 6, 5, 1441792, 65532, 65527, 1441792)
+}

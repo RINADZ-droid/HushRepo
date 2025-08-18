@@ -187,11 +187,12 @@ data = {
 environment = SubResource("Environment_8r73w")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Node3D"]
-omni_range = 8.477
-omni_attenuation = 1.608
+omni_range = 6.189
+omni_attenuation = -0.026
 
 [node name="MainMenuCam" type="Camera3D" parent="Node3D"]
-transform = Transform3D(0.988756, 0.000521976, 0.149534, 0, 0.999994, -0.00349065, -0.149535, 0.0034514, 0.98875, -0.264988, 1.1715, 0.648607)
+transform = Transform3D(0.988756, 0.000521976, 0.149534, 0.0154646, 0.994275, -0.105726, -0.148734, 0.10685, 0.983088, -0.00818133, 1.29685, -0.000932097)
+fov = 85.6461
 script = ExtResource("7_8r73w")
 
 [connection signal="pressed" from="MainMenuButtons/StartButton" to="MainMenuButtons/MainMenuButtonsControl" method="_on_start_button_pressed"]

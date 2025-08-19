@@ -16,6 +16,9 @@ var t_bob = 0.0
 
 @onready var head: Node3D = $Head
 @onready var camera_3d: Camera3D = $Head/Camera3D
+@onready var ray_cast_3d: RayCast3D = $Head/Camera3D/RayCast3D
+@onready var mesh_instance_2d: MeshInstance2D = $CanvasLayer/MeshInstance2D
+@onready var hand: Node3D = $Head/Camera3D/hand
 
 
 func _ready() -> void:
@@ -67,6 +70,25 @@ func _physics_process(delta: float) -> void:
 	camera_3d.transform.origin = _headbob(t_bob)
 	
 	move_and_slide()
+	var object = ray_cast_3d.get_collider()
+	
+	if ray_cast_3d.is_colliding():
+		mesh_instance_2d.modulate.r = 255
+		mesh_instance_2d.modulate.g = 0
+		mesh_instance_2d.modulate.b = 0
+		
+		if Input.is_action_pressed("use"):
+			object.global_position = hand.global_position
+			object.global_rotation = hand.global_rotation
+			object.collision_layer = 2
+			object.linear_velocity = Vector3(0.1, 3, 0.1)
+		
+	else :
+		mesh_instance_2d.modulate.r = 255
+		mesh_instance_2d.modulate.g = 255
+		mesh_instance_2d.modulate.b = 255
+
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

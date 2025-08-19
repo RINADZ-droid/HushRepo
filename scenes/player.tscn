@@ -21,6 +21,14 @@ doppler_tracking = 2
 light_energy = 5.0
 spot_range = 45.0
 
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0384651, -0.0441897, 0.00831212)
+target_position = Vector3(4, 0, 0)
+collision_mask = 3
+
+[node name="hand" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63913e-07, -0.327649, -3.2)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]

@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 var SPEED = 3.75
 var SPRINT_SPEED = 5.25
-const JUMP_VELOCITY = 3.5
+const JUMP_VELOCITY = 6.5
 const SENSITIVITY = 0.35
 
 var flash_on:bool

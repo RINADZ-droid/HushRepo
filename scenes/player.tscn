@@ -6,21 +6,20 @@
 [sub_resource type="SphereMesh" id="SphereMesh_3vyb7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
-height = 2.71597
+height = 3.57754
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_3vyb7")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.147081, 0.863214, -0.0384651)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00831212, 1.50932, -0.0384651)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 doppler_tracking = 2
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
 light_energy = 5.0
-spot_range = 20.0
-spot_angle = 30.0
+spot_range = 45.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

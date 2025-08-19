@@ -78,7 +78,7 @@ flash={
 
 [physics]
 
-3d/default_gravity=10.2
+3d/default_gravity=15.0
 
 [rendering]
 
